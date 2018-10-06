@@ -1,0 +1,8 @@
+version: "3.2"
+services:
+  dev:
+    image: fsharp:10.2.1
+    volumes:
+      - ./src:/src
+    stdin_open: true # -i
+    tty: true # -t

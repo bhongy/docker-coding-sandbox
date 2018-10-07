@@ -60,7 +60,6 @@ function concatValidationResults(r1: R, r2: R): R {
   } else if (r1 instanceof Failure && r2 instanceof Failure) {
     return Failure.concat(r1, r2);
   }
-  // because javascript sucks - let's all write Haskell or F#
   throw Error('Should never reached.');
 }
 

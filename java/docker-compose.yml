@@ -1,6 +1,6 @@
 version: "3.2"
 services:
-  java_dev:
+  java8_dev:
     image: openjdk:8-jdk-alpine3.8
     # build:
     #   context: .

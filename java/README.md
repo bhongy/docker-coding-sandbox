@@ -1,7 +1,8 @@
 ## To start
 
 ```sh
-docker-compose run --rm java_dev 
+# use OpenJDK for Java 8
+docker-compose run --rm java8_dev 
 ```
 
 You will be in the docker container with the isolated java environment.

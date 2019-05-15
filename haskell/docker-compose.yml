@@ -1,7 +1,7 @@
 version: '3.3'
 services:
-  app:
-    build: ./
+  haskell-dev:
+    image: bhongy/haskell-dev:8.6.2
     ports:
       - 8888:80
     volumes:

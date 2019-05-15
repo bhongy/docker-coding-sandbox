@@ -1,0 +1,11 @@
+{
+    "name": "VSCode Remote Container: Haskell",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "haskell-dev",
+    "workspaceFolder": "/usr/app",
+    "extensions": [
+        "justusadam.language-haskell",
+        "alanz.vscode-hie-server"
+    ],
+    "shutdownAction": "stopCompose"
+}

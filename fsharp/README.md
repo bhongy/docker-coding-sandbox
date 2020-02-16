@@ -12,11 +12,21 @@ This project uses Visual Studio Code Remote Containers extension to run the deve
 3. The command prompt in vscode's integrated terminal should start at `/workspaces/docker-coding-sandbox/fsharp`
 
 ```sh
-# run the program
-dotnet run  apple banana
+# Run a project (`-p` is the path to a project)
+dotnet run -p src/MyConsoleApp
 ```
 
 You can also run code by highlight it and `Option + Return` to evaluate it in F# interactive.
+
+## .NET CLI
+
+```sh
+# create a new library project
+dotnet new classlib -lang F# -o src/Domain
+
+# create reference between projects
+dotnet add src/MyConsoleApp/MyConsoleApp.fsproj reference src/Domain/Domain.fsproj
+```
 
 ## References
 

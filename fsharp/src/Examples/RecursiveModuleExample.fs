@@ -1,4 +1,4 @@
-module App.RecursiveModuleExample
+namespace Examples
 
 module rec RecursiveModule =
     type Orientation =

@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="FunctionalDomainModeling.fs" />
+    <Compile Include="PigLatin.fs" />
+    <Compile Include="RecursiveModuleExample.fs" />
+    <!-- Program.fs has to come last since it has <EntryPoint> -->
     <Compile Include="Program.fs" />
   </ItemGroup>
 

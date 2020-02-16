@@ -1,4 +1,6 @@
 // from: https://www.youtube.com/watch?v=Up7LcbGZFuo by Scott Wlaschin
+module App.FunctionalDomainModeling
+
 open System.Text.RegularExpressions
 
 type Contact' = {

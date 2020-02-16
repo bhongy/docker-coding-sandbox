@@ -1,21 +1,23 @@
-## To start container
+This project uses Visual Studio Code Remote Containers extension to run the development environment in Docker container.
+
+## Requirement
+
+1. [Docker Desktop](https://docs.docker.com/docker-for-mac/install/) daemon running on your machine
+2. install [`ms-vscode-remote.remote-containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
+
+## To start
+
+1. In VSCode, select command `Remote-Container: Reopen in Container`
+2. Wait for the container to build
+3. The command prompt in vscode's integrated terminal should start at `/workspaces/docker-coding-sandbox/fsharp`
 
 ```sh
-# use fsharpi
-docker-compose run --rm dev
-# use bash
-docker-compose run --rm dev bash
+# run the program
+dotnet run  apple banana
 ```
 
-## In the container
+You can also run code by highlight it and `Option + Return` to evaluate it in F# interactive.
 
-```bash
-# use fsharp interactive
-fsharpi
+## References
 
-# compile to Program.exe
-fsharpc Program.fs
-
-# run Program.exe
-mono Program.exe [...arguments]
-```
+- [Get Started with F# in Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/fsharp/get-started/get-started-vscode)

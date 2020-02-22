@@ -32,9 +32,9 @@ type Currency =
     | USD
 
 // This is the default type and the name should be `Domain.Payment`
-// is there a way to do that as `Domain.Payment` is the namespace?
+// is there a way to do that as `Domain.Payment` instead of `Domain.Payment.Payment`
 // what's the better name?
-type Info =
+type Payment =
     { Amount: Amount
       Currency: Currency
       Method: Method }
@@ -46,9 +46,9 @@ type Failure =
 
 // * methods *
 
-type ConvertCurrency = Info -> Currency -> Info
+type ConvertCurrency = Payment -> Currency -> Payment
 
-type Print = Info -> string
+type Print = Payment -> string
 
 // TEMPORARY
 let printMethod (method: Method): string =

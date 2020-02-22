@@ -1,6 +1,5 @@
-﻿module Domain
-
-// from: https://www.youtube.com/watch?v=Up7LcbGZFuo by Scott Wlaschin
+﻿// from: https://www.youtube.com/watch?v=Up7LcbGZFuo by Scott Wlaschin
+module Domain.Main
 
 open System.Text.RegularExpressions
 

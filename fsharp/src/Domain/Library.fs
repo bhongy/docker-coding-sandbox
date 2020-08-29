@@ -21,29 +21,28 @@ type CustomerId = CustomerId of int
 
 type OrderId = OrderId of int
 
-// createEmailAddress : string -> Option<EmailAddress>
-let createEmailAddress (s: string): Option<EmailAddress> =
+let createEmailAddress (s: string): EmailAddress option =
     if Regex.IsMatch(s, @"^\S+@\S+\.\S+$") then Some(EmailAddress s) else None
 
 type String1 = String1 of string
 
-let createString1 (s: string): Option<String1> =
+let createString1 (s: string): String1 option =
     if s.Length = 1 then Some(String1 s) else None
 
 type String50 = String50 of string
 
-let createString50 (s: string): Option<String50> =
+let createString50 (s: string): String50 option =
     if s.Length <= 50 then Some(String50 s) else None
 
 type OrderLineQty = OrderLineQty of int
 
-let createOrderLineQty (qty: int): Option<OrderLineQty> =
+let createOrderLineQty (qty: int): OrderLineQty option =
     if qty > 0 && qty <= 99 then Some(OrderLineQty qty) else None
 
 // because these must be changed together as a group
 type PersonalName =
     { FirstName: String50
-      MiddleInitial: String1 option // or `Option<String1>
+      MiddleInitial: String1 option
       LastName: String50 }
 
 // because these must be changed together as a group
@@ -64,7 +63,7 @@ type VerifiedEmail = VerifiedEmail of EmailAddress
 
 type VerificationHash = VerificationHash of string
 
-type VerificationService = EmailAddress * VerificationHash -> Option<VerifiedEmail>
+type VerificationService = EmailAddress * VerificationHash -> VerifiedEmail option
 
 type EmailContactInfo =
     | Unverified of EmailAddress

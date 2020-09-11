@@ -1,8 +1,10 @@
 {
   "name": "Go",
-  "build": {
-    "dockerfile": "Dockerfile",
-  },
+  "image": "bhongy/vscode-remote-devcontainer.go:latest",
+  // uncomment to build the devcontainer image locally
+  // "build": {
+  //   "dockerfile": "Dockerfile",
+  // },
   "settings": { 
 		"terminal.integrated.shell.linux": "/bin/zsh",
 		"go.gopath": "/go",

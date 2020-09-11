@@ -14,3 +14,5 @@ This project uses Visual Studio Code Remote Containers extension to run the deve
 ```sh
 go run main.go
 ```
+
+> Note: there is an "Analysis Tools Missing" issue from `gocode-gomod`. It is not needed since we use `gopls`. If it bugs you, press "install" button when vscode extension prompt from "Analysis Tools Missing".

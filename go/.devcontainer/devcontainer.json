@@ -10,9 +10,14 @@
 		"go.gopath": "/go",
 		"go.useGoProxyToCheckForToolUpdates": false,
 		"go.useLanguageServer": true
-	},
+  },
   "extensions": [
 		"golang.Go",
+  ],
+  "runArgs": [
+    // security and capability needed for ptrace-based debugger for golang
+    // https://code.visualstudio.com/docs/remote/create-dev-container#_set-up-a-folder-to-run-in-a-container
+    "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined",
   ],
   "forwardPorts": [],
   "postCreateCommand": "go version",

@@ -1,3 +1,5 @@
+# Docker Coding Sandbox: Go
+
 This project uses Visual Studio Code Remote Containers extension to run the development environment in Docker container.
 
 ## Requirement

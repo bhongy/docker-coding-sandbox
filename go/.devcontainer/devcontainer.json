@@ -1,17 +1,15 @@
 {
-  "name": "Go",
-  "image": "bhongy/vscode-remote-devcontainer.go:latest",
-  // uncomment to build the devcontainer image locally
-  // "build": {
-  //   "dockerfile": "Dockerfile",
-  // },
+  "name": "Go & PostgreSQL",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "webapp",
+  "workspaceFolder": "/workspaces/docker-coding-sandbox/go",
   "settings": { 
 		"terminal.integrated.shell.linux": "/bin/zsh",
     "go.gopath": "/go",
 		"go.useLanguageServer": true
   },
   "extensions": [
-		"golang.Go",
+    "golang.Go",
   ],
   "runArgs": [
     // security and capability needed for ptrace-based debugger for golang

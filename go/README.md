@@ -18,3 +18,7 @@ go run main.go
 ```
 
 > Note: there is an "Analysis Tools Missing" issue from `gocode-gomod`. It is not needed since we use `gopls`. If it bugs you, press "install" button when vscode extension prompt from "Analysis Tools Missing".
+
+## To publish image to docker hub
+
+`bhongy/vscode-remote-devcontainer.go` on docker hub builds a new image on merges to the branch `publish-image/go` using `go/.devcontainer/Dockerfile`.

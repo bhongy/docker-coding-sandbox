@@ -1,7 +1,7 @@
 # image for golang development environment
 # to use with vscode remote-container with go tools installed
 
-FROM golang:1.15.2
+FROM golang:1.15.3
 ENV GO111MODULE=on
 
 # install zsh and oh-my-zsh

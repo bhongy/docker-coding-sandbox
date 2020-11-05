@@ -16,14 +16,8 @@ RUN apt-get update \
 
 # Install go tools use by golang.go extension
 RUN go get \
-    golang.org/x/tools/gopls \
-    github.com/cweill/gotests/... \
-    github.com/josharian/impl \
-    # The Go extension complains "Analysis Tools Missing" without these
-    github.com/mdempsky/gocode \
-    github.com/uudashr/gopkgs/v2/cmd/gopkgs \
-    github.com/ramya-rao-a/go-outline \
-    github.com/stamblerre/gocode \
-    github.com/rogpeppe/godef \
-    github.com/sqs/goreturns \
-    golang.org/x/lint/golint
+    golang.org/x/tools/gopls@v0.5.2 \
+    github.com/cweill/gotests/...@v1.5.3 \
+    github.com/josharian/impl@v1.0.0 \
+    github.com/davidrjenni/reftools/cmd/fillstruct@latest \
+    github.com/ramya-rao-a/go-outline@latest

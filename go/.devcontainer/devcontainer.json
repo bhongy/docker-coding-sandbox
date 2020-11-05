@@ -7,8 +7,7 @@
   // },
   "settings": { 
 		"terminal.integrated.shell.linux": "/bin/zsh",
-		"go.gopath": "/go",
-		"go.useGoProxyToCheckForToolUpdates": false,
+    "go.gopath": "/go",
 		"go.useLanguageServer": true
   },
   "extensions": [

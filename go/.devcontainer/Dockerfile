@@ -16,8 +16,9 @@ RUN apt-get update \
 
 # Install go tools use by golang.go extension
 RUN go get \
-    golang.org/x/tools/gopls@v0.5.2 \
-    github.com/cweill/gotests/...@v1.5.3 \
+    golang.org/x/tools/gopls@v0.6.1 \
+    github.com/cweill/gotests/...@v1.6.0 \
+    github.com/go-delve/delve@v1.5.1 \
     github.com/josharian/impl@v1.0.0 \
     github.com/davidrjenni/reftools/cmd/fillstruct@latest \
     github.com/ramya-rao-a/go-outline@latest

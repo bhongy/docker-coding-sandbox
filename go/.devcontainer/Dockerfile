@@ -16,9 +16,13 @@ RUN apt-get update \
 
 # Install go tools use by golang.go extension
 RUN go get \
-    golang.org/x/tools/gopls@v0.6.1 \
-    github.com/cweill/gotests/...@v1.6.0 \
-    github.com/go-delve/delve@v1.5.1 \
+    golang.org/x/tools/gopls@v0.6.2 \
+    # not sure what is it for so omit for now
+    # github.com/cweill/gotests/...@v1.6.0 \
+    # to run "debug test"
+    github.com/go-delve/delve/cmd/dlv@v1.5.1 \
+    # to run "Go: Add import"
+    github.com/uudashr/gopkgs/v2/cmd/gopkgs@v2.1.2 \
     github.com/josharian/impl@v1.0.0 \
     github.com/davidrjenni/reftools/cmd/fillstruct@latest \
     github.com/ramya-rao-a/go-outline@latest

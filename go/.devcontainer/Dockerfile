@@ -16,7 +16,6 @@ RUN apt-get update \
 
 # Install go tools use by golang.go extension
 RUN go get \
-    golang.org/x/tools/gopls@v0.6.2 \
     # not sure what is it for so omit for now
     # github.com/cweill/gotests/...@v1.6.0 \
     # to run "debug test"
@@ -26,3 +25,6 @@ RUN go get \
     github.com/josharian/impl@v1.0.0 \
     github.com/davidrjenni/reftools/cmd/fillstruct@latest \
     github.com/ramya-rao-a/go-outline@latest
+
+# gopls updates very frequently separate for faster build
+RUN go get golang.org/x/tools/gopls@v0.6.3

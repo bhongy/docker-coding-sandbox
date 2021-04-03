@@ -1,8 +1,7 @@
 # image for golang development environment
 # to use with vscode remote-container with go tools installed
 
-FROM golang:1.15.3
-ENV GO111MODULE=on
+FROM golang:1.16.3
 
 # install zsh and oh-my-zsh
 RUN apt-get update \
@@ -27,4 +26,4 @@ RUN go get \
     github.com/ramya-rao-a/go-outline@latest
 
 # gopls updates very frequently separate for faster build
-RUN go get golang.org/x/tools/gopls@v0.6.3
+RUN go get golang.org/x/tools/gopls@v0.6.9

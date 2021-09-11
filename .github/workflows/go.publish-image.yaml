@@ -6,16 +6,34 @@ on:
     branches: [bhongy/add-github-action-publish-go]
 
 jobs:
-  build:
+  build-and-push-image:
+    name: Push Docker image to Github Packages
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build docker image
-      run: docker build ./go/.devcontainer -t bhongy/vscode-remote-devcontainer:$(date +%s)
+    permissions:
+      packages: write
+      contents: read
 
-  # push_to_registry:
-  #   name: Push Docker image to Github Packages
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     packages: write
-  #     contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Log in to the Container registry
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ghcr.io/bhongy/vscode-remote-devcontainer
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

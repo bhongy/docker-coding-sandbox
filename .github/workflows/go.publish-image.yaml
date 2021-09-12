@@ -31,8 +31,8 @@ jobs:
         with:
           images: ghcr.io/bhongy/vscode-remote-devcontainer
       
-      - run: echo "#{{ steps.meta.outputs.tags }}"
-      - run: echo "#{{ steps.meta.outputs.labels }}"
+      - run: echo #{{ steps.meta.outputs.tags }}
+      - run: echo #{{ steps.meta.outputs.labels }}
 
       # - name: Build and push Docker image
       #   uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc

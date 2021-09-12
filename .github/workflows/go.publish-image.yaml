@@ -37,3 +37,11 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Write random stuff to output.log
+        shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      
+      - name: Print from output.log
+        run: cat output.log
